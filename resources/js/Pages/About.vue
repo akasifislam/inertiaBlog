@@ -1,4 +1,6 @@
 <template>
-    <h2>About Us</h2>
-    <inertia-link href="/contact"></inertia-link>
+    <h2>Welcome About</h2>
+    <inertia-link href="/">Home</inertia-link><br>
+    <inertia-link href="/about">About</inertia-link><br>
+    <inertia-link href="/contact">Contact</inertia-link>
 </template>
