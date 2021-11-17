@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <title>Your page title</title>
-        <meta name="description" content="Your page description">
+        <title>Welcome - My app</title>
+        <meta head-key="description" name="description" content="This is a page specific description" />
     </Head>
     <app-layout>
        <header class="bg-white shadow">

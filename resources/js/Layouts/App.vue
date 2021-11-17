@@ -1,5 +1,10 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
+    <Head>
+    <title>MasterMan-App
+    </title>
+    <meta head-key="description" name="description" content="This is the default description" />
+    </Head>
   <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
