@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import { createInertiaApp,Link  } from '@inertiajs/inertia-vue3'
+import { createInertiaApp,Link ,Head } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 // import { Link } from '@inertiajs/inertia-vue'
 
@@ -9,7 +9,7 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
-      .component('InertiaLink', Link)
+      .component('InertiaLink', Link,Head)
       .mount(el)
   },
 })
