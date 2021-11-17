@@ -1,10 +1,6 @@
 <template>
     <app-layout>
-       <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900">Contact</h2>
-        </div>
-    </header>
+       <AppHeader title="jhgfhdsghds" />
 
     <main>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -18,9 +14,11 @@
 
 <script>
 import AppLayout from '../Layouts/App.vue'
+import AppHeader from '../Layouts/AppHead.vue'
 export default {
     components:{
-        AppLayout
+        AppLayout,
+        AppHeader
     }
 }
 </script>
