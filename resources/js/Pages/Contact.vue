@@ -152,13 +152,14 @@ import AppLayout from '../Layouts/App.vue'
 import AppHeader from '../Layouts/AppHead.vue'
 import { reactive } from 'vue'
 import { Inertia } from '@inertiajs/inertia'
+import { useForm } from '@inertiajs/inertia-vue3'
 export default {
     components:{
         AppLayout,
         AppHeader
     },
     setup() {
-    const form = reactive({
+    const form = useForm({
       name: null,
       email: null,
       subject: null,
@@ -166,7 +167,8 @@ export default {
     });
 
     function submit() {
-      Inertia.post('/contact', form)
+      // Inertia.post('/contact', form)
+      form.post('/contact')
     }
       return { form,submit };
     }

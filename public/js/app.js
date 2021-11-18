@@ -21760,6 +21760,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppHead_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Layouts/AppHead.vue */ "./resources/js/Layouts/AppHead.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+
 
 
 
@@ -21770,7 +21772,7 @@ __webpack_require__.r(__webpack_exports__);
     AppHeader: _Layouts_AppHead_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   setup: function setup() {
-    var form = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
+    var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_4__.useForm)({
       name: null,
       email: null,
       subject: null,
@@ -21778,7 +21780,8 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     function submit() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post('/contact', form);
+      // Inertia.post('/contact', form)
+      form.post('/contact');
     }
 
     return {
