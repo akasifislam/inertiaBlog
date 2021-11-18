@@ -13,9 +13,6 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      // fontFamily: {
-      //   custom: ['Inter var', 'sans-serif'],
-      // },
     },
   },
   variants: {
