@@ -25,4 +25,4 @@ Route::get('/about', function () {
 
 
 Route::get('contact', [ContactController::class, 'index']);
-Route::post('contact', [ContactController::class, 'store']);
+Route::post('contact', [ContactController::class, 'store'])->name('backend.contact.store');

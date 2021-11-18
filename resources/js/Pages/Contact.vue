@@ -3,15 +3,15 @@
     <AppHeader title="Contact-masterman.com" />
 
     <main>
-      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div class="max-w-12xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
           <div class="">
             <div class="mt-10 sm:mt-0">
               <div class="mt-5 md:mt-0 md:col-span-2">
-                <form action="#" method="POST">
+                <form @submit.prevent="submit">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
-                      <div class="grid grid-cols-6 gap-6">
+                      <div class="grid grid-cols-4 gap-8">
                         <div class="col-span-6 sm:col-span-4">
                           <label
                             for="name"
@@ -21,6 +21,7 @@
                           <input
                             type="text"
                             name="name"
+                            v-model="form.name"
                             id="name"
                             autocomplete="name"
                             class="
@@ -44,6 +45,7 @@
                           <input
                             type="text"
                             name="email-address"
+                            v-model="form.email"
                             id="email-address"
                             autocomplete="email"
                             class="
@@ -67,6 +69,7 @@
                           <input
                             type="text"
                             name="subject"
+                            v-model="form.subject"
                             id="subject"
                             autocomplete="subject"
                             class="
@@ -89,9 +92,9 @@
                           >
                           <textarea
                             type="text"
-                            cols="30"
-                            rows="10"
+                            rows="3"
                             name="message"
+                            v-model="form.message"
                             id="message"
                             autocomplete="message"
                             class="
@@ -147,10 +150,25 @@
 <script>
 import AppLayout from '../Layouts/App.vue'
 import AppHeader from '../Layouts/AppHead.vue'
+import { reactive } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
 export default {
     components:{
         AppLayout,
         AppHeader
+    },
+    setup() {
+    const form = reactive({
+      name: null,
+      email: null,
+      subject: null,
+      message: null,
+    });
+
+    function submit() {
+      Inertia.post('/contact', form)
+    }
+      return { form,submit };
     }
 }
 </script>
