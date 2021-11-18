@@ -11,4 +11,9 @@ class ContactController extends Controller
     {
         return Inertia::render('Contact');
     }
+
+    public function store(Request $request)
+    {
+        $request->dd();
+    }
 }
