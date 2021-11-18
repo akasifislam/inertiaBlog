@@ -35,6 +35,7 @@
                               rounded-md
                             "
                           />
+                          <div class="text-red-500" v-if="form.errors.name">{{ form.errors.name }}</div>
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                           <label
@@ -59,6 +60,7 @@
                               rounded-md
                             "
                           />
+                          <div class="text-red-500" v-if="form.errors.email">{{ form.errors.email }}</div>
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                           <label
@@ -83,6 +85,7 @@
                               rounded-md
                             "
                           />
+                          <div class="text-red-500" v-if="form.errors.subject">{{ form.errors.subject }}</div>
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                           <label
@@ -108,6 +111,7 @@
                               rounded-md
                             "
                           ></textarea>
+                          <div class="text-red-500" v-if="form.errors.message">{{ form.errors.message }}</div>
                         </div>
                       </div>
                     </div>
