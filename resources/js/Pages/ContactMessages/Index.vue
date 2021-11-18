@@ -103,9 +103,9 @@
                             </div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900"
+                            <a href="#" class="hover:text-gray-100 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                               >Edit</a>
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900"
+                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
                               >Delete</a>
                           </td>
                         </tr>
