@@ -176,8 +176,7 @@ export default {
 
     function submit() {
       // Inertia.post('/contact', form)
-      form.post('/contact/store')
-    }
+      form.post('/contact/store')    }
       return { form,submit };
     }
 }

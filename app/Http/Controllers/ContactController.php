@@ -33,6 +33,6 @@ class ContactController extends Controller
             'subject' => $request->get('subject'),
             'message' => $request->get('message')
         ]);
-        return redirect()->to('/');
+        return redirect()->to('/contact');
     }
 }
