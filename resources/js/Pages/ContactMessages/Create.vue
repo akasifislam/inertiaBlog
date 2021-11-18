@@ -34,6 +34,7 @@
                               border-gray-300
                               rounded-md
                             "
+                            :class="{'border-red-500':form.errors.name}"
                           />
                           <div class="text-red-500" v-if="form.errors.name">{{ form.errors.name }}</div>
                         </div>
@@ -59,6 +60,7 @@
                               border-gray-300
                               rounded-md
                             "
+                            :class="{'border-red-500':form.errors.email}"
                           />
                           <div class="text-red-500" v-if="form.errors.email">{{ form.errors.email }}</div>
                         </div>
@@ -84,6 +86,7 @@
                               border-gray-300
                               rounded-md
                             "
+                            :class="{'border-red-500':form.errors.subject}"
                           />
                           <div class="text-red-500" v-if="form.errors.subject">{{ form.errors.subject }}</div>
                         </div>
@@ -110,6 +113,7 @@
                               border-gray-300
                               rounded-md
                             "
+                            :class="{'border-red-500':form.errors.message}"
                           ></textarea>
                           <div class="text-red-500" v-if="form.errors.message">{{ form.errors.message }}</div>
                         </div>
@@ -152,8 +156,8 @@
 </template>
 
 <script>
-import AppLayout from '../Layouts/App.vue'
-import AppHeader from '../Layouts/AppHead.vue'
+import AppLayout from '../../Layouts/App.vue'
+import AppHeader from '../../Layouts/AppHead.vue'
 import { reactive } from 'vue'
 import { Inertia } from '@inertiajs/inertia'
 import { useForm } from '@inertiajs/inertia-vue3'
@@ -172,7 +176,7 @@ export default {
 
     function submit() {
       // Inertia.post('/contact', form)
-      form.post('/contact')
+      form.post('/contact/store')
     }
       return { form,submit };
     }

@@ -11,7 +11,11 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Contact');
+        return Inertia::render('ContactMessages/Index');
+    }
+    public function create()
+    {
+        return Inertia::render('ContactMessages/Create');
     }
 
     public function store(Request $request)
