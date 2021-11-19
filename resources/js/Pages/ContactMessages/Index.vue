@@ -17,7 +17,10 @@
                       sm:rounded-lg
                     "
                   >
+                  <inertia-link href="contact/create" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
+                              >Create</inertia-link>
                     <table class="min-w-full divide-y divide-gray-200">
+                      
                       <thead class="bg-gray-50">
                         <tr>
                           <th
@@ -46,20 +49,6 @@
                               tracking-wider
                             "
                           >
-                            Title
-                          </th>
-                          <th
-                            scope="col"
-                            class="
-                              px-6
-                              py-3
-                              text-left text-xs
-                              font-medium
-                              text-gray-500
-                              uppercase
-                              tracking-wider
-                            "
-                          >
                             Email
                           </th>
                           <th
@@ -74,7 +63,35 @@
                               tracking-wider
                             "
                           >
-                            Role
+                            Subject
+                          </th>
+                          <th
+                            scope="col"
+                            class="
+                              px-6
+                              py-3
+                              text-left text-xs
+                              font-medium
+                              text-gray-500
+                              uppercase
+                              tracking-wider
+                            "
+                          >
+                            Message
+                          </th>
+                          <th
+                            scope="col"
+                            class="
+                              px-6
+                              py-3
+                              text-left text-xs
+                              font-medium
+                              text-gray-500
+                              uppercase
+                              tracking-wider
+                            "
+                          >
+                            Action
                           </th>
                           <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
@@ -82,26 +99,44 @@
                         </tr>
                       </thead>
                       <tbody class="bg-white divide-y divide-gray-200">
-                        <tr>
+                        <tr v-for="(contact,index) in contactMessages" :key="index.id">
                           <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
                               <div class="ml-4">
                                 <div class="text-sm font-medium text-gray-900">
-                                  Flora Wu
+                                  {{ contact.name }}
                                 </div>
                               </div>
                             </div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-500">
-                              Software engineer, IT
+                            <div class="flex items-center">
+                              <div class="ml-4">
+                                <div class="text-sm font-medium text-gray-900">
+                                  {{ contact.email }}
+                                </div>
+                              </div>
                             </div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-500">
-                              flora.wu@example.com
+                            <div class="flex items-center">
+                              <div class="ml-4">
+                                <div class="text-sm font-medium text-gray-900">
+                                  {{ contact.subject }}
+                                </div>
+                              </div>
                             </div>
                           </td>
+                          <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                              <div class="ml-4">
+                                <div class="text-sm font-medium text-gray-900">
+                                  {{ contact.message }}
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          
                           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             <a href="#" class="hover:text-gray-100 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                               >Edit</a>
@@ -127,27 +162,13 @@
 <script>
 import AppLayout from '../../Layouts/App.vue'
 import AppHeader from '../../Layouts/AppHead.vue'
-import { reactive } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
-import { useForm } from '@inertiajs/inertia-vue3'
 export default {
     components:{
         AppLayout,
         AppHeader
     },
-    setup() {
-    const form = useForm({
-      name: null,
-      email: null,
-      subject: null,
-      message: null,
-    });
-
-    function submit() {
-      // Inertia.post('/contact', form)
-      form.post('/contact')
-    }
-      return { form,submit };
+    props:{
+      contactMessages:  Array
     }
 }
 </script>

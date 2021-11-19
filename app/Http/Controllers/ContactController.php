@@ -11,7 +11,9 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return Inertia::render('ContactMessages/Index');
+        return Inertia::render('ContactMessages/Index',[
+            'contactMessages' => ContactMessage::latest()->get()
+        ]);
     }
     public function create()
     {
