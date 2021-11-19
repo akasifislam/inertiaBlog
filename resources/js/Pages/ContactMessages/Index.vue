@@ -17,7 +17,7 @@
                       sm:rounded-lg
                     "
                   >
-                  <inertia-link href="contact/create" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
+                  <inertia-link href="contact/create" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100 float-right"
                               >Create</inertia-link>
                     <table class="min-w-full divide-y divide-gray-200">
                       
