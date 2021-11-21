@@ -1,15 +1,19 @@
 <template>
   <app-layout>
     <AppHeader title="Contact-masterman.com" />
-
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
+            <h2 class="text-3xl font-bold text-gray-900">Create Contact</h2>
+            <inertia-link href="/contact" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100 float-right"
+                              >Back</inertia-link>
+        </div>
+    </header>
     <main>
       <div class="max-w-12xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
           <div class="">
             <div class="mt-10 sm:mt-0">
               <div class="mt-5 md:mt-0 md:col-span-2">
-                <inertia-link href="/contact" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100 float-right"
-                              >Back</inertia-link>
                 <form @submit.prevent="submit">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">

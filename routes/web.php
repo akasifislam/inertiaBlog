@@ -30,4 +30,4 @@ Route::get('/contact/create', [ContactController::class, 'create']);
 Route::post('/contact/store', [ContactController::class, 'store']);
 
 Route::get('/contact/{id}/edit', [ContactController::class, 'edit']);
-Route::post('/contact/{id}/update', [ContactController::class, 'update']);
+Route::put('/contact/{id}/update', [ContactController::class, 'update']);

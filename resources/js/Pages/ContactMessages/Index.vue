@@ -1,7 +1,13 @@
 <template>
   <app-layout>
     <AppHeader title="Contact-masterman.com" />
-
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
+            <h2 class="text-3xl font-bold text-gray-900">All Contact</h2>
+            <inertia-link href="contact/create" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100 float-right"
+                              >Create</inertia-link>
+        </div>
+    </header>
     <main>
       <div class="max-w-12xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
@@ -17,8 +23,6 @@
                       sm:rounded-lg
                     "
                   >
-                  <inertia-link href="contact/create" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100 float-right"
-                              >Create</inertia-link>
                     <table class="min-w-full divide-y divide-gray-200">
                       
                       <thead class="bg-gray-50">

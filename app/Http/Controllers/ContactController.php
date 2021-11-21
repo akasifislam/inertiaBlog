@@ -46,8 +46,22 @@ class ContactController extends Controller
             'contactMessage' => ContactMessage::findOrFail($id)
         ]);
     }
-    public function update()
+    public function update(Request $request,$id)
     {
-        return Inertia::render('ContactMessages/Edit');
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+        $contactMessage = ContactMessage::findOrFail($id);
+
+        $contactMessage->update([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
+            'message' => $request->get('message')
+        ]);
+        return redirect()->to('/contact');
     }
 }
