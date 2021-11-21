@@ -24,6 +24,10 @@ Route::get('/about', function () {
 // Route::inertia('/contact', 'Contact');
 
 
-Route::get('/contact', [ContactController::class, 'index'])->name('inertia.contact.index');
+Route::get('/contact', [ContactController::class, 'index']);
+
 Route::get('/contact/create', [ContactController::class, 'create']);
 Route::post('/contact/store', [ContactController::class, 'store']);
+
+Route::get('/contact/{id}/edit', [ContactController::class, 'edit']);
+Route::post('/contact/{id}/update', [ContactController::class, 'update']);

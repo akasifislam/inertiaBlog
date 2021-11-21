@@ -37,4 +37,14 @@ class ContactController extends Controller
         ]);
         return redirect()->to('/contact');
     }
+
+
+    public function edit($id)
+    {
+        return $id;
+    }
+    public function update()
+    {
+        return "nfvbdf";
+    }
 }
