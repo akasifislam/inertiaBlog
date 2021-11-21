@@ -31,3 +31,7 @@ Route::post('/contact/store', [ContactController::class, 'store']);
 
 Route::get('/contact/{id}/edit', [ContactController::class, 'edit']);
 Route::put('/contact/{id}/update', [ContactController::class, 'update']);
+
+
+Route::delete('/contact/{id}/destroy', [ContactController::class, 'destroy']);
+

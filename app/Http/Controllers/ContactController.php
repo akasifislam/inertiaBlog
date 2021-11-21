@@ -64,4 +64,12 @@ class ContactController extends Controller
         ]);
         return redirect()->to('/contact');
     }
+
+
+    public function destroy($id)
+    {
+        $contactMessage = ContactMessage::findOrFail($id);
+        $contactMessage->delete();
+        return redirect()->to('/contact');
+    }
 }

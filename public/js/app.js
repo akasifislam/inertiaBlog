@@ -21878,6 +21878,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layouts/App.vue */ "./resources/js/Layouts/App.vue");
 /* harmony import */ var _Layouts_AppHead_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Layouts/AppHead.vue */ "./resources/js/Layouts/AppHead.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -21887,6 +21891,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     contactMessages: Array
+  },
+  setup: function setup() {
+    function destroy(id) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia["delete"]("/contact/".concat(id, "/destroy/"), {
+        onBefore: function onBefore() {
+          return confirm('Are you Sure Want to delete This Data');
+        }
+      });
+    }
+
+    return {
+      destroy: destroy
+    };
   }
 });
 
@@ -22916,13 +22933,7 @@ var _hoisted_32 = {
 
 var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
-}, "Delete", -1
-/* HOISTED */
-);
-
+var _hoisted_34 = ["onClick"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_AppHeader = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("AppHeader");
 
@@ -22967,7 +22978,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"]), _hoisted_34])])]);
+        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          type: "button",
+          onClick: function onClick($event) {
+            return $setup.destroy(contact.id);
+          },
+          "class": "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
+        }, "Delete", 8
+        /* PROPS */
+        , _hoisted_34)])])]);
       }), 128
       /* KEYED_FRAGMENT */
       )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" More people... ")])])])])])])])])])])];

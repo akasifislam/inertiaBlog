@@ -144,8 +144,8 @@
                           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             <inertia-link :href="`/contact/`+contact.id+`/edit`" class="hover:text-gray-100 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                               >Edit</inertia-link>
-                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
-                              >Delete</a>
+                            <button type="button" @click="destroy(contact.id)"  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hover:text-gray-100"
+                              >Delete</button>
                           </td>
                           </div>
                         </tr>
@@ -167,6 +167,9 @@
 <script>
 import AppLayout from '../../Layouts/App.vue'
 import AppHeader from '../../Layouts/AppHead.vue'
+import { reactive } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
+
 export default {
     components:{
         AppLayout,
@@ -174,6 +177,17 @@ export default {
     },
     props:{
       contactMessages:  Array
+    },
+    setup() {
+      function destroy(id) {
+        Inertia.delete(`/contact/${id}/destroy/`,{
+          onBefore: () => confirm('Are you Sure Want to delete This Data')
+        })
+    }
+
+      return {
+        destroy
+      }
     }
 }
 </script>

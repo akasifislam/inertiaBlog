@@ -165,6 +165,7 @@
 import AppLayout from '../../Layouts/App.vue'
 import AppHeader from '../../Layouts/AppHead.vue'
 import { useForm } from '@inertiajs/inertia-vue3'
+
 export default {
     components:{
         AppLayout,
