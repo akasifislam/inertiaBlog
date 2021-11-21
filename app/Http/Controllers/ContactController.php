@@ -41,10 +41,13 @@ class ContactController extends Controller
 
     public function edit($id)
     {
-        return $id;
+        // $contactMessage = ContactMessage::findOrFail($id);
+        return Inertia::render('ContactMessages/Edit',[
+            'contactMessage' => ContactMessage::findOrFail($id)
+        ]);
     }
     public function update()
     {
-        return "nfvbdf";
+        return Inertia::render('ContactMessages/Edit');
     }
 }
