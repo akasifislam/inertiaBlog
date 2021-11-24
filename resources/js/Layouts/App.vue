@@ -52,8 +52,11 @@
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
+              <inertia-link :href="route('welcome')">asif</inertia-link>
+              <inertia-link :href="route('contact')">contact</inertia-link>
               <Link
                 v-for="item in navigation"
+
                 :key="item.name"
                 :href="item.href"
                 :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
@@ -194,9 +197,9 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '/', current: false },
+  { name: 'Dashboard', href: '/',route:'welcome', current: false },
   { name: 'About', href: '/about', current: false },
-  { name: 'Contact', href: '/contact', current: false }
+  { name: 'Contact', href: '/contact',route:'contact', current: false }
 ]
 
 export default {

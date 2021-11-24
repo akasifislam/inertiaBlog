@@ -17,14 +17,14 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
-});
+})->name('welcome');
 Route::get('/about', function () {
     return Inertia::render('About');
 });
 // Route::inertia('/contact', 'Contact');
 
 
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/contact/create', [ContactController::class, 'create']);
 Route::post('/contact/store', [ContactController::class, 'store']);
